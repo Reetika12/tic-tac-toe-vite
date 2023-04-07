@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.css'
 import Player from "./player"
 function Board() {
 const[turn , setTurn]=useState("");
@@ -78,6 +79,10 @@ useEffect(()=>{
  }
 },[arr])
 
+const resetTheBoard=()=>{
+    setArr(["","","","","","","","",""])
+    setWinner("")
+}
 
   return <div>
     <div className="board">
@@ -85,6 +90,7 @@ useEffect(()=>{
       return <div className="eachBox" key={index} onClick={()=>fillTheBox(el,index)}>{el}</div>
     })}
   </div>
+  <button class="btn btn-success" style={{marginTop:"10px"}} onClick={()=>resetTheBoard()}>Reset</button>
   <Player winner={winner} turn={turn}/>
   </div>
 }

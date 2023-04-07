@@ -1,5 +1,4 @@
 import Board from "./board"
-// import Player from "./player"
 import './App.css'
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
   return (
     <div className="App">
        <Board/>
-       {/* <Player/> */}
     </div>
   )
 }
